@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.example.day01sk_application"
+        minSdkVersion 22
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    //解析依赖
+    implementation 'com.google.code.gson:gson:2.2.4'
+    //列表依赖
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    //风格依赖
+    implementation 'com.android.support:design:30.0.0'
+    //轮播图依赖
+    compile 'com.youth.banner:banner:1.4.10'
+    compile 'com.github.bumptech.glide:glide:3.7.0'//glide图片加载框架
+    //Material Design分格控件的依赖，包含RecyclerView，Navigationview...很多控件
+    implementation 'com.android.support:design:29.0.5'
+    //如果是androidx，使用以下依赖，后续项目全部使用androidx依赖
+    implementation 'com.google.android.material:material:1.2.0-alpha02'
+
+    // 图片加载框架圆
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+}
